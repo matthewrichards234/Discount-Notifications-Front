@@ -1,7 +1,7 @@
 export function Profile() {
   return (
     <>
-      <h2>SCHYUH</h2>
+      <h2>Profile</h2>
     </>
   );
 }
