@@ -17,21 +17,24 @@ const Login = () => {
   } = useForm();
   const onSubmit: SubmitHandler<ILoginInput> = (data) => console.log(data);
 
+  const formClassName: string =
+    "flex flex-col justify-items-center items-center";
   const labelClassName: string = "text-2xl underline underline-offset-2";
-  const errorMessageClass: string = "text-red-500 text-[12px]";
+  const errorMessageClassName: string = "text-red-500 text-[12px]";
+  const borderClassName: string = "border-2 w-50 rounded-lg";
 
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
+      <form onSubmit={handleSubmit(onSubmit)} className={formClassName}>
         <label className={labelClassName}>First Name</label>
         <input
           {...register("firstName", { required: true })}
           aria-invalid={errors.firstName ? "true" : "false"}
           type="text"
-          className="border-3"
+          className={borderClassName}
         />
         {errors.firstName?.type === "required" && (
-          <p role="alert" className={errorMessageClass}>
+          <p role="alert" className={errorMessageClassName}>
             First name is required
           </p>
         )}
@@ -40,10 +43,10 @@ const Login = () => {
           {...register("lastName", { required: true })}
           aria-invalid={errors.lastName ? "true" : "false"}
           type="text"
-          className="border-3"
+          className={borderClassName}
         />
         {errors.lastName?.type === "required" && (
-          <p role="alert" className={errorMessageClass}>
+          <p role="alert" className={errorMessageClassName}>
             Last name is required
           </p>
         )}
@@ -52,10 +55,10 @@ const Login = () => {
           {...register("email", { required: true })}
           aria-invalid={errors.email ? "true" : "false"}
           type="text"
-          className="border-3"
+          className={borderClassName}
         />
         {errors.email?.type === "required" && (
-          <p role="alert" className={errorMessageClass}>
+          <p role="alert" className={errorMessageClassName}>
             Email is required
           </p>
         )}
@@ -64,10 +67,10 @@ const Login = () => {
           {...register("password", { required: "Email is required" })}
           aria-invalid={errors.password ? "true" : "false"}
           type="text"
-          className="border-3"
+          className={borderClassName}
         />
         {errors.password && (
-          <p role="alert" className={errorMessageClass}>
+          <p role="alert" className={errorMessageClassName}>
             {errors.password.message}
           </p>
         )}
@@ -77,14 +80,17 @@ const Login = () => {
             required: "Password confirmation is required",
           })}
           type="text"
-          className="border-3"
+          className={borderClassName}
         />
         {errors.confirmPassword && (
-          <p role="alert" className={errorMessageClass}>
+          <p role="alert" className={errorMessageClassName}>
             {errors.confirmPassword.message}
           </p>
         )}
-        <input type="submit" />
+        <input
+          type="submit"
+          className="bg-sky-500 hover:bg-sky-700 text-black font-semibold py-2 px-4 rounded"
+        />
       </form>
     </>
   );
