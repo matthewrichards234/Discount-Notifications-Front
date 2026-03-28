@@ -7,7 +7,7 @@ const Header = () => {
           to="/"
           end
           className={({ isActive }) =>
-            isActive ? "text-red-500" : "text-black"
+            isActive ? "text-red-500 underline" : "text-black hover:underline"
           }
         >
           Home
@@ -15,7 +15,7 @@ const Header = () => {
         <NavLink
           to="/login"
           className={({ isActive }) =>
-            isActive ? "text-red-500" : "text-black"
+            isActive ? "text-red-500 underline" : "text-black hover:underline"
           }
         >
           Login
@@ -23,7 +23,7 @@ const Header = () => {
         <NavLink
           to="/signup"
           className={({ isActive }) =>
-            isActive ? "text-red-500" : "text-black"
+            isActive ? "text-red-500 underline" : "text-black hover:underline"
           }
         >
           Signup
@@ -31,7 +31,7 @@ const Header = () => {
         <NavLink
           to="/profile"
           className={({ isActive }) =>
-            isActive ? "text-red-500" : "text-black"
+            isActive ? "text-red-500 underline" : "text-black hover:underline"
           }
         >
           Profile
