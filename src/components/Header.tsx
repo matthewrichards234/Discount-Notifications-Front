@@ -2,7 +2,7 @@ import { NavLink } from "react-router";
 const Header = () => {
   return (
     <>
-      <nav className="flex flex-row gap-5">
+      <nav className="flex flex-row gap-10 items-center justify-center text-2xl">
         <NavLink
           to="/"
           end
