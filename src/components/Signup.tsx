@@ -1,5 +1,60 @@
+import { useForm } from "react-hook-form";
+import type { SubmitHandler } from "react-hook-form";
+
+interface ILoginInput {
+  email: string;
+  password: string;
+}
 const Signup = () => {
-  return <div>Signup</div>;
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit: SubmitHandler<ILoginInput> = (data) => console.log(data);
+
+  const formClassName: string =
+    "flex flex-col justify-items-center items-center";
+  const labelClassName: string = "text-2xl underline underline-offset-2";
+  const errorMessageClassName: string = "text-red-500 text-[12px]";
+  const borderClassName: string = "border-2 w-50 rounded-lg m-2";
+  return (
+    <div className="bg-gray-200 p-6 flex justify-center items-center min-h-screen">
+      <div className="border-2 rounded p-6 bg-white w-200 shadow-lg">
+        <form onSubmit={handleSubmit(onSubmit)} className={formClassName}>
+          <label className={labelClassName}>Email</label>
+          <input
+            {...register("email", { required: true })}
+            aria-invalid={errors.email ? "true" : "false"}
+            type="text"
+            className={borderClassName}
+          />
+          {errors.email?.type === "required" && (
+            <p role="alert" className={errorMessageClassName}>
+              Email is required
+            </p>
+          )}
+          <label className={labelClassName}>Password</label>
+          <input
+            {...register("password", { required: "Email is required" })}
+            aria-invalid={errors.password ? "true" : "false"}
+            type="text"
+            className={borderClassName}
+          />
+          {errors.password && (
+            <p role="alert" className={errorMessageClassName}>
+              {errors.password.message}
+            </p>
+          )}
+
+          <input
+            type="submit"
+            className="bg-sky-500 hover:bg-sky-700 text-black font-semibold py-2 px-4 rounded mt-5 w-50 h-12"
+          />
+        </form>
+      </div>
+    </div>
+  );
 };
 
 export default Signup;
