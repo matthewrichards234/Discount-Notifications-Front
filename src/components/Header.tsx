@@ -36,6 +36,14 @@ const Header = () => {
         >
           Profile
         </NavLink>
+        <NavLink
+          to="/upload"
+          className={({ isActive }) =>
+            isActive ? "text-red-500 underline" : "text-black hover:underline"
+          }
+        >
+          Upload
+        </NavLink>
       </nav>
     </>
   );

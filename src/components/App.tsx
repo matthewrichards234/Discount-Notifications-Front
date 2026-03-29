@@ -3,16 +3,17 @@ import Header from "./Header";
 import Login from "./Login";
 import Signup from "./Signup";
 import Profile from "./Profile";
+import UploadForm from "./UploadForm";
 
 function App() {
   return (
     <>
-      <h1 className="text-blue-500">Hello</h1>
-      <Header></Header>
+      <Header />
       <Routes>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="/profile" element={<Profile />}></Route>
+        <Route path="upload" element={<UploadForm />}></Route>
       </Routes>
     </>
   );
