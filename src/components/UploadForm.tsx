@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import type { SubmitHandler } from "react-hook-form";
+import { useRef, useState } from "react";
 
 interface IUploadForm {
   website: string;
@@ -14,6 +15,16 @@ const UploadForm = () => {
 
   const onSubmit: SubmitHandler<IUploadForm> = (url) => {
     console.log(url);
+  };
+
+  const sampleURLRef = useRef(null);
+  const [copied, setCopied] = useState(false);
+  const copyLink = () => {
+    const text = sampleURLRef.current?.textContent;
+    // console.log(text);
+    navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 3000);
   };
 
   // Regex for URL validation
@@ -40,6 +51,18 @@ const UploadForm = () => {
           className="bg-sky-500 hover:bg-sky-700 text-black font-semibold py-2 px-4 rounded mt-5 w-50 h-12"
         />
       </form>
+      <div className="flex flex-col items-center m-7 border-2">
+        <p>Sample URL</p>
+        <p ref={sampleURLRef}>
+          https://www.nike.com/t/air-max-95-big-bubble-mens-shoes-2xNsHz6W/IB6830-001
+        </p>
+        <button onClick={copyLink} className="cursor-pointer">
+          Copy
+        </button>
+        {copied && (
+          <span className="ml-2 text-green-500 font-semibold">Copied!</span>
+        )}
+      </div>
     </div>
   );
 };
