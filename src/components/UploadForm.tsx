@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import type { SubmitHandler } from "react-hook-form";
 import { useRef, useState } from "react";
+import { postUrl } from "../utils/fetches/urlFetch";
 
 interface IUploadForm {
   website: string;
@@ -15,6 +16,7 @@ const UploadForm = () => {
 
   const onSubmit: SubmitHandler<IUploadForm> = (url) => {
     console.log(url);
+    postUrl();
   };
 
   const sampleURLRef = useRef(null);
