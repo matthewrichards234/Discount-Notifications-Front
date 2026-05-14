@@ -14,9 +14,9 @@ const UploadForm = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit: SubmitHandler<IUploadForm> = (url) => {
-    console.log(url);
-    postUrl();
+  const onSubmit: SubmitHandler<IUploadForm> = (data) => {
+    console.log(data);
+    postUrl(data.website);
   };
 
   const sampleURLRef = useRef(null);

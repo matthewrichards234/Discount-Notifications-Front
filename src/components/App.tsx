@@ -19,10 +19,11 @@ function App() {
       <button onClick={handleDarkModeToggle}>Light or Dark ahh mode</button>
       <Header />
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/auth" element={<Login />} />
+        {/* <Route path="/signup" element={<Signup />} /> */}
         <Route path="/profile" element={<Profile />} />
         <Route path="/upload" element={<UploadForm />} />
+        <Route path="/cart" />
       </Routes>
     </div>
   );

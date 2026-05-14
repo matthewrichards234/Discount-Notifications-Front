@@ -2,48 +2,22 @@ import { NavLink } from "react-router";
 const Header = () => {
   return (
     <>
-      <nav className="flex flex-row gap-10 items-center justify-center text-2xl">
-        <NavLink
-          to="/"
-          end
-          className={({ isActive }) =>
-            isActive ? "text-red-500 underline" : ""
-          }
-        >
-          Home
+      <nav className="flex flex-row items-center text-2xl border-2">
+        <NavLink to={"/"} className={"ml-4"}>
+          LOGO
         </NavLink>
-        <NavLink
-          to="/login"
-          className={({ isActive }) =>
-            isActive ? "text-red-500 underline" : ""
-          }
-        >
-          Login
-        </NavLink>
-        <NavLink
-          to="/signup"
-          className={({ isActive }) =>
-            isActive ? "text-red-500 underline" : ""
-          }
-        >
-          Signup
-        </NavLink>
-        <NavLink
-          to="/profile"
-          className={({ isActive }) =>
-            isActive ? "text-red-500 underline" : ""
-          }
-        >
-          Profile
-        </NavLink>
-        <NavLink
-          to="/upload"
-          className={({ isActive }) =>
-            isActive ? "text-red-500 underline" : ""
-          }
-        >
-          Upload
-        </NavLink>
+        <div className="ml-auto flex flex-row items-center gap-3 p-4">
+          <NavLink to={"/cart"} className={"p-0 m-0"}>
+            <img
+              src="src/assets/parcel.png"
+              alt="Paper bag icons created by Sergei Kokota - Flaticon"
+              className="w-7 h-7 p-0 m-0"
+            />
+          </NavLink>
+          <NavLink to={"/auth"} className={"p-0"}>
+            SIGN IN
+          </NavLink>
+        </div>
       </nav>
     </>
   );

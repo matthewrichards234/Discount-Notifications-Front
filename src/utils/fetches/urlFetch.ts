@@ -1,13 +1,14 @@
-const baseUrlDev = import.meta.env.BASE_URL_DEV;
+//const baseUrlDev = import.meta.env.BASE_URL_DEV;
+const baseUrlDev = "http://localhost:3000";
 
-export async function postUrl() {
+export async function postUrl(website: string) {
   const url = baseUrlDev + "/url/create";
   await fetch(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ url: "url" }),
+    body: JSON.stringify({ url: website }),
   })
     .then((response) => {
       if (response.ok) {
@@ -20,12 +21,3 @@ export async function postUrl() {
       console.error("There was a problem with the fetch operation:", error),
     );
 }
-
-/* 
-Current Output: 5:05PM
-[Error] Failed to load resource: the server responded with a status of 404 (Not Found) (create, line 0)
-[Error] There was a problem with the fetch operation: – Error: Network response was not ok — urlFetch.ts:15
-Error: Network response was not ok — urlFetch.ts:15
-	error
-    I think the problem is in line 10...?
-*/
