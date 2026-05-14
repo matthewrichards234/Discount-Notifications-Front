@@ -2,30 +2,22 @@ import { Route, Routes } from "react-router";
 import Footer from "./Footer";
 import Header from "./Header";
 import Login from "./Login";
-import Signup from "./Signup";
 import Profile from "./Profile";
 import UploadForm from "./UploadForm";
-import { DarkModeContext } from "../context/DarkModeContext";
-import { useContext } from "react";
+import Main from "./Main";
 
 function App() {
-  const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
-  const handleDarkModeToggle = () => {
-    toggleDarkMode();
-  };
   return (
-    <div
-      className={`${darkMode ? "bg-black text-white" : "bg-white text-black"} min-h-screen`}
-    >
-      <button onClick={handleDarkModeToggle}>Light or Dark ahh mode</button>
-      <Header />
+    <div>
       <Routes>
+        <Route path="/" element={<Main />} />
         <Route path="/auth" element={<Login />} />
-        {/* <Route path="/signup" element={<Signup />} /> */}
         <Route path="/profile" element={<Profile />} />
         <Route path="/upload" element={<UploadForm />} />
         <Route path="/cart" />
+        <Route path="/about-us" />
       </Routes>
+      <Header />
       <Footer />
     </div>
   );

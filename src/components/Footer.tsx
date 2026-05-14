@@ -1,17 +1,15 @@
+import { NavLink } from "react-router";
+
 const Footer = () => {
   return (
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, non veniam!
-      Labore suscipit hic, nostrum doloremque natus soluta explicabo quibusdam
-      fugit maxime perferendis minima blanditiis atque laudantium qui doloribus
-      odio harum possimus cumque quod laborum aut dicta. Hic dolore similique
-      consequuntur fugit aperiam non placeat veniam eligendi, nihil earum ut
-      sapiente nulla rerum iusto numquam soluta ipsum quos quas maxime omnis?
-      Magnam, porro dolorem hic provident corporis debitis dolorum voluptate
-      recusandae quis illo est, quod fuga alias distinctio doloribus
-      repudiandae. Nisi necessitatibus iure, tenetur saepe quam impedit
-      repudiandae aut nemo qui aliquam in voluptatum, doloremque voluptate,
-      ducimus quia ipsam! Asperiores!
+    <div className="bg-white">
+      <NavLink to={"/about-us"}>About Us</NavLink>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit omnis
+        veritatis delectus quaerat laudantium sapiente, magnam at placeat harum
+        tempore dolorem est illum itaque blanditiis laborum enim! Quisquam,
+        voluptatibus magni!
+      </p>
     </div>
   );
 };
