@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router";
+import Footer from "./Footer";
 import Header from "./Header";
 import Login from "./Login";
 import Signup from "./Signup";
@@ -25,6 +26,7 @@ function App() {
         <Route path="/upload" element={<UploadForm />} />
         <Route path="/cart" />
       </Routes>
+      <Footer />
     </div>
   );
 }

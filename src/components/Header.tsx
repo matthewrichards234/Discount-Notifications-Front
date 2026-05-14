@@ -2,7 +2,7 @@ import { NavLink } from "react-router";
 const Header = () => {
   return (
     <>
-      <nav className="flex flex-row items-center text-2xl border-2">
+      <nav className="flex flex-row items-center text-2xl border-2 fixed top-0 w-full bg-white">
         <NavLink to={"/"} className={"ml-4"}>
           LOGO
         </NavLink>
