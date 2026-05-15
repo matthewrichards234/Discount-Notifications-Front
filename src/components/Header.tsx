@@ -22,7 +22,7 @@ const Header = () => {
               className="w-7 h-7 p-0 m-0"
             />
           </NavLink>
-          <NavLink to={"/auth"} className={"p-0"}>
+          <NavLink to={"/auth"} className={"p-0 hover:underline"}>
             SIGN IN
           </NavLink>
         </div>
