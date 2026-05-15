@@ -7,6 +7,7 @@ import UploadForm from "./UploadForm";
 import Main from "./Main";
 import About from "./About";
 import Create from "./Create";
+import Cart from "./Cart";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/upload" element={<UploadForm />} />
         <Route path="/create" element={<Create />} />
-        <Route path="/cart" />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/about-us" element={<About />} />
       </Routes>
       <Header />

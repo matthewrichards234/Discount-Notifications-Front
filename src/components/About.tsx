@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="p-20 mt-20">
+    <div className="p-20 mt-20 min-h-screen">
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae, tempora!
       Expedita, voluptatem incidunt. Aliquam, eius. Odit vero esse eum nisi
       placeat eligendi aliquam quia possimus laborum deleniti doloribus magnam,
