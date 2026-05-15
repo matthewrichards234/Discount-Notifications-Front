@@ -4,16 +4,13 @@ const Create = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
-  } = useForm();
+    formState: { isValid, errors, dirtyFields },
+  } = useForm({ mode: "onChange", reValidateMode: "onChange" });
 
   const onSubmit = (data) => {
     console.log(data);
   };
 
-  // Regex for URL validation
-  const urlPattern =
-    /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
   return (
     <div className="flex items-center justify-center m-auto p-30">
       <form
@@ -24,14 +21,23 @@ const Create = () => {
         <label>Paste URL below...</label>
         <input
           {...register("website", {
-            pattern: { value: urlPattern, message: "Invalid URL" },
+            required: "URL is required",
+            validate: (value) => {
+              try {
+                new URL(value);
+                return true;
+              } catch {
+                return "Invalid URL";
+              }
+            },
           })}
-          type="url"
-          className={"border-2 rounded-lg m-2 w-120"}
+          type="text"
+          className="border-2 rounded-lg m-2 w-120"
         />
         <input
           type="submit"
-          className="bg-sky-500 hover:bg-sky-700 text-black font-semibold py-2 px-4 rounded mt-5 w-50 h-12"
+          className="bg-sky-500 hover:bg-sky-700 text-black font-semibold py-2 px-4 rounded mt-5 w-50 h-12 disabled:opacity-40 disabled:pointer-events-none"
+          disabled={!isValid}
         />
       </form>
     </div>
