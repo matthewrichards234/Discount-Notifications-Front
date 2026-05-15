@@ -5,6 +5,7 @@ import Login from "./Login";
 import Profile from "./Profile";
 import UploadForm from "./UploadForm";
 import Main from "./Main";
+import About from "./About";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/upload" element={<UploadForm />} />
         <Route path="/cart" />
-        <Route path="/about-us" />
+        <Route path="/about-us" element={<About />} />
       </Routes>
       <Header />
       <Footer />

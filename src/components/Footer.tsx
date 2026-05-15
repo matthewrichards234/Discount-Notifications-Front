@@ -2,14 +2,8 @@ import { NavLink } from "react-router";
 
 const Footer = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-gray-100 p-10">
       <NavLink to={"/about-us"}>About Us</NavLink>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit omnis
-        veritatis delectus quaerat laudantium sapiente, magnam at placeat harum
-        tempore dolorem est illum itaque blanditiis laborum enim! Quisquam,
-        voluptatibus magni!
-      </p>
     </div>
   );
 };
