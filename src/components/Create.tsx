@@ -5,6 +5,7 @@ const Create = () => {
     register,
     handleSubmit,
     formState: { isValid, errors, dirtyFields },
+    reset,
   } = useForm({ mode: "onChange", reValidateMode: "onChange" });
 
   const onSubmit = (data) => {
@@ -38,6 +39,7 @@ const Create = () => {
           type="submit"
           className="bg-sky-500 hover:bg-sky-700 text-black font-semibold py-2 px-4 rounded mt-5 w-50 h-12 disabled:opacity-40 disabled:pointer-events-none"
           disabled={!isValid}
+          onClick={() => reset()}
         />
       </form>
     </div>
