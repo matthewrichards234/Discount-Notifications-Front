@@ -7,6 +7,14 @@ const Header = () => {
           LOGO
         </NavLink>
         <div className="ml-auto flex flex-row items-center gap-3 p-4">
+          <NavLink
+            to={"/create"}
+            className={
+              "flex items-center justify-center border-r-2 bg-black text-white p-3 transition hover:bg-gray-700 delay-100 duration-200 ease-in-out"
+            }
+          >
+            UPLOAD
+          </NavLink>
           <NavLink to={"/cart"} className={"p-0 m-0"}>
             <img
               src="src/assets/parcel.png"
