@@ -30,8 +30,8 @@ const Signin = () => {
       <p>Continue w/ Apple</p>
       <p>or</p>
       <br />
-      <Link to={"/email-auth"} className={"p-0 hover:underline"}>
-        Continue w/ Email
+      <Link to={"/email-auth"} className="p-0 hover:underline text-3xl">
+        Continue with Email
       </Link>
       <Outlet />
     </div>

@@ -13,7 +13,7 @@ const Create = () => {
   };
 
   return (
-    <div className="flex items-center justify-center m-auto p-30">
+    <div className="flex flex-col items-center justify-center m-auto p-30">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col justify-items-center items-center"
@@ -46,6 +46,27 @@ const Create = () => {
           onClick={() => reset()}
         />
       </form>
+
+      {/* The following code is simply for testing if adding an item works successfully */}
+      <div className="flex flex-col items-center p-3 border m-3 w-3xl">
+        <p>or</p>
+        <p>Add item manually</p>
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="flex flex-col justify-items-center items-center"
+        >
+          <label htmlFor="">Image URL</label>
+          <input type="url" className="border w-2xl" />
+          <label htmlFor="">Item Name</label>
+          <input type="text" className="border w-2xl" />
+          <label htmlFor="">Item Price</label>
+          <input type="number" min={1} className="border w-2xl" />
+          <input
+            type="submit"
+            className="bg-sky-500 hover:bg-sky-700 text-black font-semibold py-2 px-4 rounded mt-5 w-50 h-12 disabled:opacity-40 disabled:pointer-events-none"
+          />
+        </form>
+      </div>
     </div>
   );
 };
