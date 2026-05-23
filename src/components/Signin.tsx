@@ -1,6 +1,6 @@
 import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
-import { useNavigate } from "react-router";
+import { useNavigate, NavLink } from "react-router";
 
 const Signin = () => {
   const navigate = useNavigate();
@@ -30,7 +30,9 @@ const Signin = () => {
       <p>Continue w/ Apple</p>
       <p>or</p>
       <br />
-      <p>continue with email</p>
+      <NavLink to={"/auth-email"} className={"p-0 hover:underline"}>
+        Continue w/ Email
+      </NavLink>
     </div>
   );
 };
