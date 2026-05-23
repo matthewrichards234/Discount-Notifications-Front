@@ -1,12 +1,12 @@
 import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
-import { useNavigate, NavLink } from "react-router";
+import { useNavigate, Outlet, Link } from "react-router";
 
 const Signin = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center">
+    <div className="min-h-screen flex flex-col items-center justify-center mt-30">
       Signin
       <GoogleLogin
         onSuccess={(credentialResponse) => {
@@ -30,9 +30,10 @@ const Signin = () => {
       <p>Continue w/ Apple</p>
       <p>or</p>
       <br />
-      <NavLink to={"/auth-email"} className={"p-0 hover:underline"}>
+      <Link to={"/email-auth"} className={"p-0 hover:underline"}>
         Continue w/ Email
-      </NavLink>
+      </Link>
+      <Outlet />
     </div>
   );
 };

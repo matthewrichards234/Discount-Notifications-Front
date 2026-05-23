@@ -15,9 +15,8 @@ function App() {
     <div className="min-h-screen flex flex-col">
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/auth" element={<Signin />}>
-          <Route path="/auth-email" element={<Login />} />
-        </Route>
+        <Route path="/auth" element={<Signin />} />
+        <Route path="/email-auth" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/upload" element={<UploadForm />} />
         <Route path="/create" element={<Create />} />
